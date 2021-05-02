@@ -1,18 +1,18 @@
 [
-{"question":"This is a Sample Question 1?",
+{"question":"1. Which conformation among syn and anti of dichloroethane is more stable? ",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"Ssyn",
+            "b":"Anti",
+            "c":"Both are equally stable "
           },
 "correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
+
+{"question":"2. What is the value of dihedral angle in anti conformation of dichloroethane? ",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"0 degree",
+            "b":"90 degree",
+            "c":"180 degree",
+            "d":"270 degree"
           },
 "correctAnswer":"c"} 
 ]

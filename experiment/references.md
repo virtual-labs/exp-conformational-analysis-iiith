@@ -1,1 +1,2 @@
-### Link your references in here
+1. Alex A. Granovsky, Firefly version 7.1.G, at [http://classic.chem.msu.su/gran/firefly/index.ph](http://classic.chem.msu.su/gran/firefly/index.php)
+2. M.W.Schmidt, K.K.Baldridge, J.A.Boatz, S.T.Elbert, M.S.Gordon, J.H.Jensen, S.Koseki, N.Matsunaga, K.A.Nguyen, S.Su, T.L.Windus, M.Dupuis, J.A.Montgomery J.Comput.Chem. 14, 1347-1363 (1993) 
