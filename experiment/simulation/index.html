@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
-
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
+  <head>
+    <!-- Add CSS at the head of HTML file -->
+    <link
+      rel="stylesheet"
+      href="chemdoodleWeb-9.2.0/ChemDoodleWeb.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.5-b/css/style.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- Your code goes here-->
+    <div class="columns">
+      <div class="column">
+        <canvas
+          class="ChemDoodleWebComponent"
+          id="movie"
+          alt="ChemDoodle Web Component"
+          >This browser does not support HTML5/Canvas.</canvas
+        >
+      </div>
+      <div class="column">
+        <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
+      </div>
+    </div>
+    <!-- Add JS at the bottom of HTML file -->
+    <script
+      type="text/javascript"
+      src="chemdoodleWeb-9.2.0/ChemDoodleWeb.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
