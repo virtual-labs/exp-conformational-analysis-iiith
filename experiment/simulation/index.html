@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
-
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
+  <head>
+    <!-- Add CSS at the head of HTML file -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="chemdoodleWeb-9.2.0/ChemDoodleWeb.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.5-b/css/style.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- Your code goes here-->
+    <div class="center-content">
+      <h4 class="title is-4">
+        Simulating Angle vs Energy Plot for 1,2-dichloroethane
+      </h4>
+    </div>
+    <div class="v-mobile-reverse">
+      <div class="columns">
+        <div class="column center-content">
+          <canvas
+            class="ChemDoodleWebComponent"
+            id="movie"
+            alt="ChemDoodle Web Component"
+            style="width: 100px"
+            >This browser does not support HTML5/Canvas.</canvas
+          >
+        </div>
+        <div class="column center-content">
+          <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
+        </div>
+      </div>
+      <div class="center-content custom-container">
+        <div>Angle is <span id="angle"></span>°</div>
+        <input
+          type="range"
+          class="v-slider"
+          min="-180"
+          max="180"
+          step="3"
+          id="angle-slider"
+        />
+        <div>Energy is <span id="energy"></span></div>
+        <button class="v-button" id="animate-button">Start Animation</button>
+      </div>
+    </div>
+    <!-- Add JS at the bottom of HTML file -->
+    <script
+      type="text/javascript"
+      src="chemdoodleWeb-9.2.0/ChemDoodleWeb.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

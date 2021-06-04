@@ -1,1 +1,1 @@
-## Experiment name
+## Conformational analysis of 1,2-dichloroethane
