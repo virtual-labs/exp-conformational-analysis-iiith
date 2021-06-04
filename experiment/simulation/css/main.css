@@ -2,3 +2,31 @@
 .ChemDoodleWebComponent {
   border: none !important;
 }
+
+.center-content {
+  flex-direction: column;
+  text-align: center;
+}
+
+.v-slider {
+  width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  .v-mobile-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+/* 
+#myChart {
+  width: 100% !important;
+} */
+
+.custom-container {
+  border: none;
+  padding: 3em;
+}
+.custom-container > * {
+  padding: 0.5em;
+}

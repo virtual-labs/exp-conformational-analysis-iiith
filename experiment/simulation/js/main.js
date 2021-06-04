@@ -608,34 +608,32 @@ const data = {
 };
 
 const setMolecule = (angle, animate = false) => {
-  angle = angle.toString();
-  let movie = new ChemDoodle.MovieCanvas3D("movie", 400, 400);
-  // movie.playMode = ChemDoodle.MovieCanvas3D.PLAY_SPRING;
-  console.log(angle);
-  console.log(data[angle]);
+  let width = 400;
+  if (window.innerWidth < 900) {
+    width = window.innerWidth;
+  }
+  let movie = new ChemDoodle.MovieCanvas3D("movie", width, 400);
   if (data[angle] != null) {
-    console.log();
     if (animate) {
-      Object.keys(data).forEach((key) =>
-        movie.addFrame([ChemDoodle.readXYZ(data[key]["geometry"])], [])
-      );
+      for (let angle = -180; angle <= 180; angle += 3) {
+        movie.addFrame([ChemDoodle.readXYZ(data[angle]["geometry"])], []);
+      }
     } else {
       movie.addFrame([ChemDoodle.readXYZ(data[angle]["geometry"])], []);
     }
-    console.log(movie.frames);
 
     movie.styles.set3DRepresentation("Ball and Stick");
     movie.styles.atoms_displayLabels_3D = true;
     movie.styles.backgroundColor = "transparent";
     movie.loadMolecule(movie.frames[0].mols[0]);
     if (animate) {
-      //   console.log(movie.playMode);
       movie.startAnimation();
     }
   }
+  return movie;
 };
 
-const initChart2 = () => {
+const initChart = () => {
   xyValues = Object.keys(data).map((key) => ({
     x: key,
     y: data[key]["energy"],
@@ -648,6 +646,7 @@ const initChart2 = () => {
         {
           pointRadius: 4,
           pointBackgroundColor: "rgb(0,0,255)",
+          pointBorderColor: "rgb(133, 193, 233)",
           data: xyValues,
         },
       ],
@@ -673,11 +672,6 @@ const initChart2 = () => {
           },
         ],
       },
-
-      //   title: {
-      //     display: true,
-      //     text: "World Wine Production 2018",
-      //   },
     },
   });
 };
@@ -694,6 +688,10 @@ const highlightChart = (angle) => {
     }
   }
   chart.update();
+  // update dom values
+  document.getElementById("angle").innerHTML = angle;
+  document.getElementById("energy").innerHTML = data[angle]["energy"];
+  document.getElementById("angle-slider").value = angle;
 };
 
 const setAngle = (angle) => {
@@ -702,15 +700,56 @@ const setAngle = (angle) => {
 };
 
 // init
-const chart = initChart2();
-setAngle(-90);
+const chart = initChart();
+setAngle(document.getElementById("angle-slider").value);
+let stopAnim = true;
 
-// const playLoop = async () => {
-//   for (let angle = -180; angle <= 180; angle += 3) {
-//     highlightChart(angle);
-//     await new Promise((r) => setTimeout(r, 40));
-//   }
-// };
+const stopAnimation = () => {
+  stopAnim = true;
+};
 
-// setMolecule(-180, true);
-// playLoop();
+const playLoop = async () => {
+  const movie = setMolecule(-180, true);
+  let angle = -180;
+  let reverse = false;
+  while (true) {
+    highlightChart(angle);
+    await new Promise((r) => setTimeout(r, 56));
+    if (angle == 180) {
+      reverse = true;
+    }
+    if (!reverse) {
+      angle += 3;
+    } else {
+      angle -= 3;
+      if (angle < -180) {
+        animateButton.innerHTML = "Start Animation";
+        stopAnim = true;
+      }
+    }
+    if (stopAnim) {
+      movie.stopAnimation();
+      break;
+    }
+  }
+};
+
+// event listeners
+const angleSlider = document.getElementById("angle-slider");
+angleSlider.addEventListener("input", () => {
+  if (stopAnim) {
+    setAngle(angleSlider.value);
+  }
+});
+
+const animateButton = document.getElementById("animate-button");
+animateButton.addEventListener("click", () => {
+  if (stopAnim) {
+    animateButton.innerHTML = "Stop Animation";
+    stopAnim = false;
+    playLoop();
+  } else {
+    animateButton.innerHTML = "Start Animation";
+    stopAnim = true;
+  }
+});
