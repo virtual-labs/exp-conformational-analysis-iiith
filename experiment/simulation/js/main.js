@@ -1,3 +1,5 @@
+"use strict";
+
 import data from "./data.js";
 
 const setMolecule = (angle, animate = false) => {
@@ -5,8 +7,8 @@ const setMolecule = (angle, animate = false) => {
   if (window.innerWidth < 900) {
     width = window.innerWidth;
   }
-  let movie = new ChemDoodle.MovieCanvas3D("movie", width, 400);
-  if (data[angle] != null) {
+  const movie = new ChemDoodle.MovieCanvas3D("movie", width, 400);
+  if (data[angle] !== null) {
     if (animate) {
       for (let angle = -180; angle <= 180; angle += 3) {
         movie.addFrame([ChemDoodle.readXYZ(data[angle]["geometry"])], []);
@@ -27,7 +29,7 @@ const setMolecule = (angle, animate = false) => {
 };
 
 const initChart = () => {
-  let xyValues = Object.keys(data).map((key) => ({
+  const xyValues = Object.keys(data).map((key) => ({
     x: key,
     y: data[key]["energy"],
   }));
@@ -73,7 +75,7 @@ const highlightChart = (angle) => {
   chart.data.datasets[0].pointBackgroundColor = [];
   chart.data.datasets[0].pointRadius = [];
   for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
-    if (chart.data.datasets[0].data[i]["x"] == angle) {
+    if (chart.data.datasets[0].data[i]["x"] === angle) {
       chart.data.datasets[0].pointRadius[i] = 5;
       chart.data.datasets[0].pointBackgroundColor[i] = "red";
     } else {
@@ -108,7 +110,7 @@ const playLoop = async () => {
   while (true) {
     highlightChart(angle);
     await new Promise((r) => setTimeout(r, 56));
-    if (angle == 180) {
+    if (angle === 180) {
       reverse = true;
     }
     if (!reverse) {
