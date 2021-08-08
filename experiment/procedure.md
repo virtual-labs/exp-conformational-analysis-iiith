@@ -5,4 +5,3 @@
 5. By taking these energy and dihedral values, the plot for the energy Vs dihedral looks as shown in the next slide.
 6. Upon clicking on the plot at various dihedrals, the conformation at that particular dihedral is being displayed.
 7. All the conformations for the analysis are being played alongside of the graph to show the various possible conformations.
-
