@@ -1,18 +1,90 @@
-[
-{"question":"This is a Sample Question 1?",
-"answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
-          },
-"correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
-"answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
-          },
-"correctAnswer":"c"} 
-]
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Among the butane conformers, when viewed about C 2 -C 3 bond, which occur at energy minima on a graph of potential energy versus dihedral angle?",
+      "answers": {
+        "a": "Gauche only",
+        "b": "anti",
+        "c": "syn",
+        "d": "Both gauche and syn"
+      },
+      "explanations": {
+        "a": "Gauche conformers will have higher energy than anti conformer.",
+        "b": "Anti conformers have both CH3 groups farthest apart and hence has lowest energy.",
+        "c": "Syn conformers have the most close CH3 groups and this will lead to highest energy peaks.",
+        "d": "Only the anti conformer has the lowest energy."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The correct statement regarding conformation in butane is:",
+      "answers": {
+        "a": "The two gauche forms, when viewed about C 2 - C 3 bond, are enantiomer",
+        "b": "There is greater barrier to rotation about C 1 — C 2 bond than to C 2 - C 3 bond",
+        "c": "Its gauche form has higher energy than an eclipsed form when CH 3 — and 'H' are eclipsing",
+        "d": "In the most stable conformer, dihedral angle between hydrogen atoms is only 90°"
+      },
+      "explanations": {
+        "a": "The two gauche forms are mirror images of each other but are non superimposable.",
+        "b": "The C1-C2 bond will have a lower barrier to rotation as only H atoms will be present on C1 to interact with the CH2CH3 atoms on C2.",
+        "c": "Gauche form does not have higher form than any of the eclipsed forms.",
+        "d": "In the most stable anti conformer, H atoms make an angle of 60°"
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Select the correct statement concerning conformers of ethane and hexachloroethane:",
+      "answers": {
+        "a": "Both have different same number of important conformers",
+        "b": "Potential energy versus dihedral angle curves have similar nature in both cases",
+        "c": "Least stable conformer is hexachloroethane is most polar",
+        "d": "In potential energy versus dihedral angle diagram, there is greater difference between maxima and minima in ethane than in hexachloroethane"
+      },
+      "explanations": {
+        "a": "Both will have the same nature of important conformer as all H are now replaced by Cl.",
+        "b": "Since all H atoms are changed at the same time, the nature of the curves will remain the same.",
+        "c": "None of the conformers in will be polar.",
+        "d": "The energy difference between maxima and minima will be greater for hexachloroethane than ethane as the larger Chlorine atoms will interact more among themselves than smaller H atoms."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Consider the potential energy diagram for rotation about the C2-C3 bond in pentane.The position marked A most likely corresponds to which of the following newmann projections. <br> <img src='./images/posttest/q4/ques.png'>",
+      "answers": {
+        "a": "<img src='./images/posttest/q4/a.png'>",
+        "b": "<img src='./images/posttest/q4/b.png'>",
+        "c": "<img src='./images/posttest/q4/c.png'>",
+        "d": "<img src='./images/posttest/q4/d.png'>"
+      },
+      "explanations": {
+        "a": "The structure has 6 C atoms and hence is not of pentane.",
+        "b": "The eclipsed conformer of CH2CH3 and H will form the second most high energy structures and will correspond to A.",
+        "c": "Anti conformer will correspond to the lowest energy structure.",
+        "d": "Gauche conformer will correspond to intermediate structures."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The most stable configuration of n-butane will be",
+      "answers": {
+        "a": "skew boat",
+        "b": "eclipsed",
+        "c": "gauche",
+        "d": "staggered-anti"
+      },
+      "explanations": {
+        "a": "Skew boat conformation is the same as gauche conformation and will have the dihedral angle of 60 between the CH3 groups.",
+        "b": "Eclipsed conformer will have dihedral angle of 0 between the CH3 groups leading to maximum energy.",
+        "c": "Gauche will have dihedral angle of 60 between the CH3 groups.",
+        "d": "Staggered - anti has dihedral angle of 180 between the CH3 groups and will be most stable."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    }
+  ]
+}
