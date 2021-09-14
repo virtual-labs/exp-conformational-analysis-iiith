@@ -606,4 +606,28 @@ const data = {
   },
 };
 
+export const instructions = [
+  {
+    message: "Select an angle by sliding the slider",
+    elementId: ["angle-slider"],
+  },
+  {
+    message: "Observe the energy, for selected angle, from the graph",
+    elementId: ["myChart"],
+  },
+  {
+    message: "Observe the orientation of 1,2-dichloroethane molecule",
+    elementId: ["movie"],
+  },
+  {
+    message: "Interact with molecule by rotating, and zooming around it",
+    elementId: ["movie"],
+  },
+  {
+    message:
+      "Click on Start Animation button and watch the orientation of molecule at all possible angles",
+    elementId: ["animate-button"],
+  },
+];
+
 export default data;

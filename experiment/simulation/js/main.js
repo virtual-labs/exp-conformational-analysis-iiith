@@ -1,6 +1,37 @@
 "use strict";
 
-import data from "./data.js";
+import data, { instructions } from "./data.js";
+
+let currentInstructionIndex = -1;
+let sleepTime = 3500;
+
+const setInstruction = (index) => {
+  if (index < instructions.length && currentInstructionIndex < index) {
+    currentInstructionIndex = index;
+    document.getElementById("instructions").innerHTML =
+      instructions[currentInstructionIndex].message;
+
+    instructions[currentInstructionIndex].elementId.forEach((id, ind) => {
+      if (ind === 0)
+        document.getElementById(id).scrollIntoView({
+          behavior: "smooth",
+        });
+      document.getElementById(id).classList.add("highlight");
+    });
+    sleep(sleepTime - 600).then(() =>
+      instructions[currentInstructionIndex].elementId.forEach((id) =>
+        document.getElementById(id).classList.remove("highlight")
+      )
+    );
+  }
+};
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const setMultipleInstructions = (indexes) =>
+  indexes.forEach((val, ind) =>
+    sleep(sleepTime * ind).then(() => setInstruction(val))
+  );
 
 const setMolecule = (angle, animate = false) => {
   let width = 400;
@@ -75,7 +106,7 @@ const highlightChart = (angle) => {
   chart.data.datasets[0].pointBackgroundColor = [];
   chart.data.datasets[0].pointRadius = [];
   for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
-    if (chart.data.datasets[0].data[i]["x"] === angle) {
+    if (parseInt(chart.data.datasets[0].data[i]["x"]) === parseInt(angle)) {
       chart.data.datasets[0].pointRadius[i] = 5;
       chart.data.datasets[0].pointBackgroundColor[i] = "red";
     } else {
@@ -95,6 +126,8 @@ const setAngle = (angle) => {
 };
 
 // init
+setInstruction(0);
+
 const chart = initChart();
 setAngle(document.getElementById("angle-slider").value);
 let stopAnim = true;
@@ -136,6 +169,13 @@ angleSlider.addEventListener("input", () => {
     setAngle(angleSlider.value);
   }
 });
+angleSlider.addEventListener("mouseup", () =>
+  setMultipleInstructions([1, 2, 3, 4])
+);
+
+angleSlider.addEventListener("touchend", () =>
+  setMultipleInstructions([1, 2, 3, 4])
+);
 
 const animateButton = document.getElementById("animate-button");
 animateButton.addEventListener("click", () => {
