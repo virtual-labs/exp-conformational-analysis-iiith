@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "How many dihedral scans involving the backbone atoms can you do for n-pentane?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "0"
+      },
+      "explanations": {
+        "a": "A dihedral angle includes 4 consecutive atoms. 1 dihedral angle would mean the molecule has 4 backbone atoms only.",
+        "b": "N-pentane has 5 atoms, meaning there are two sets of 4 consecutive C atoms. Hence you can do 2 dihedral angle scans.",
+        "c": "3 dihedral angle scan would require 6 atoms to be present, which would be the case of hexane.",
+        "d": "Since the molecule pentane contains 5 atoms which is more than required for one single dihedral angle, the possible dihedral scans cannot be zero."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why does the dihedral angle scan of butane have two symmetrical dips but ethane and propane have all dips symmetrical?",
+      "answers": {
+        "a": "Butane is symmetric while propane and ethane are not.",
+        "b": "Ethane and propane are more symmetric than butane.",
+        "c": "Butane has gauche interaction which is missing in ethane and propane.",
+        "d": "Butane is larger in size than the other two."
+      },
+      "explanations": {
+        "a": "Both ethane and butane are symmetric to the same extent.",
+        "b": "Propane is less symmetric than butane.",
+        "c": "Butane dihedral scan has two CH3 groups attached which interact and produce two dips, while this kind of interaction is missing in smaller molecules like ethane and propane.",
+        "d": "Butane, though, is larger than the other two but this does not imply two symmetrical dips, as would not be observed in higher homologues."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The peaks in the torsion angle scan for butadiene are higher than peaks in butane. This is because:",
+      "answers": {
+        "a": "Butadiene has partial double bond character in its central C-C bond due to resonance.",
+        "b": "Central C-C bond in butadiene is a complete double bond.",
+        "c": "Butane is lower in energy due to all bonds being sigma bonds.",
+        "d": "Gauche interaction is much more in butadiene than in butane."
+      },
+      "explanations": {
+        "a": "Due to resonance, the central C-C bond attains partial double bond character and rotation across it would mean a loss of this resonance and hence the energy increases.",
+        "b": "Central C-C bond in butadiene has a partial double bond.",
+        "c": "More bonds mostly indicate lower energy and more stabilization which in this case would be that of butadiene.",
+        "d": "Both have a similar amount of gauche interaction and should therefore have a similar rise in energy."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What is the value of dihedral angle in anti conformation of dichloroethane?",
+      "answers": {
+        "a": "0 degree",
+        "b": "90 degree",
+        "c": "180 degree",
+        "d": "270 degree"
+      },
+      "explanations": {
+        "a": "0 degrees make syn conformation.",
+        "b": "90 degrees does not make any of the stable conformation in dichloroethane.",
+        "c": "180 degrees make anti conformation.",
+        "d": "270 degrees is equivalent to 90 degrees in the opposite direction, and hence does not make any stable conformation."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Conformations are different arrangements of atoms that can be converted into one another by rotation about:",
+      "answers": {
+        "a": "Covalent bond",
+        "b": "Double bond",
+        "c": "Single bond",
+        "d": "Triple bond"
+      },
+      "explanations": {
+        "a": "Though conformational isomerism exists in systems which have covalently bonded atoms across which rotation takes place, the strength of the bonds play a key role too. Mere covalent bond does not imply they will have different conformations.",
+        "b": "Double bonded atoms are difficult to rotate and would require very high energy and mostly do not show rotation across the double bond.",
+        "c": "Conformational isomerism is a form of stereoisomerism in which the isomers can be interconverted exclusively by rotations about formally single bonds.",
+        "d": "Triple bonded atoms do not show rotation across them."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    }
+  ]
+}
