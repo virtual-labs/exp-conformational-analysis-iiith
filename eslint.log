@@ -1,0 +1,11 @@
+
+/home/runner/work/exp-conformational-analysis-iiith/exp-conformational-analysis-iiith/experiment/simulation/js/main.js
+   41:21  warning  'ChemDoodle' is not defined                         no-undef
+   45:25  warning  'ChemDoodle' is not defined                         no-undef
+   48:23  warning  'ChemDoodle' is not defined                         no-undef
+   68:14  warning  'Chart' is not defined                              no-undef
+  135:7   warning  'stopAnimation' is assigned a value but never used  no-unused-vars
+  143:10  warning  Unexpected constant condition                       no-constant-condition
+
+✖ 6 problems (0 errors, 6 warnings)
+
